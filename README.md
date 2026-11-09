@@ -1,7 +1,5 @@
 # Dodge the Falling Blocks
 
-A small, static arcade game for CS 1101. It uses plain HTML, CSS, and JavaScript, with no packages, build step, external assets, backend, or database.
-
 ## Open and play
 
 1. Open `index.html` in a modern browser. No server or installation is needed.
@@ -14,7 +12,7 @@ The game pauses when its tab becomes hidden and resumes without counting time sp
 
 The leaderboard shows the ten highest submitted scores. Nicknames must contain 1–20 characters after surrounding spaces are removed. Each completed round can be submitted once, using its actual final score. Ties retain submission order.
 
-**Scores are stored only in this browser tab. Refreshing the page clears them.** Scores survive game restarts, but are not shared with classmates or other tabs. There is no browser storage or other persistence. This classroom starter does not prevent someone from changing their own JavaScript in developer tools.
+**Scores are stored only in this browser tab. Refreshing the page clears them.** Scores survive game restarts, but are not shared with classmates or other tabs. There is no browser storage or other persistence.
 
 ## Files
 
