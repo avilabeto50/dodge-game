@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A simple CS 1101 arcade game. Dodge blocks and compete on a temporary leaderboard.">
+  <title>Dodge the Falling Blocks | CS 1101</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <header class="page-header">
+      <h1>DODGE THE<br><span>FALLING BLOCKS</span></h1>
+    </header>
+
+    <div class="arcade-layout">
+      <section class="game-panel" aria-label="Dodge the Falling Blocks game">
+        <div class="panel-bar"><span>01 / DODGE</span><span>SCORE <strong id="score">0</strong></span></div>
+        <div class="game-stage">
+          <canvas id="game-canvas" width="600" height="500" tabindex="0"
+            aria-label="Game area. Move with left and right arrows or A and D.">Your browser needs canvas support to
+            play this game.</canvas>
+          <div id="game-overlay" class="overlay">
+            <div class="overlay-card">
+              <button id="play-button" type="button">Start Game</button>
+              <p class="small" id="overlay-hint">← → or A / D to move</p>
+            </div>
+          </div>
+        </div>
+        <div class="touch-controls" aria-label="Touch movement controls">
+          <button id="move-left" type="button" aria-label="Move left">← LEFT</button>
+          <button id="move-right" type="button" aria-label="Move right">RIGHT →</button>
+        </div>
+        <p class="control-guide"><span>← → / A D <b>MOVE</b></span><span>R <b>RESTART AFTER GAME OVER</b></span></p>
+        <p id="game-status" class="status" role="status" aria-live="polite">Press Start Game when you're ready.</p>
+      </section>
+
+      <aside class="leaderboard-panel" aria-labelledby="leaderboard-title">
+        <div class="panel-bar"><span>TOP 10</span></div>
+        <div class="leaderboard-content">
+          <h2 id="leaderboard-title">THE LEADERBOARD</h2>
+          <form id="score-form" hidden>
+            <label for="nickname">Your nickname <span>(1–20 characters)</span></label>
+            <div class="submission-row">
+              <input id="nickname" name="nickname" type="text" maxlength="20" required autocomplete="off"
+                placeholder="PLAYER ONE" aria-describedby="submission-status">
+              <button id="submit-button" type="submit">Save Score</button>
+            </div>
+          </form>
+          <p id="submission-status" class="status" role="status" aria-live="polite"></p>
+          <p id="empty-leaderboard" class="empty-message">NO SCORES YET.<br><span>Play a round. Make your mark.</span>
+          </p>
+          <table id="leaderboard-table" hidden>
+            <caption class="sr-only">Top ten scores in this browser tab</caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">PLAYER</th>
+                <th scope="col">SCORE</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body"></tbody>
+          </table>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+
+</html>
